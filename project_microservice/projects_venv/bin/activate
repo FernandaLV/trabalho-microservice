@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelavent variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/fernanda/Documentos/FIAP/Aula/MicroServicer/project_microservice/projects_venv"
+VIRTUAL_ENV="/home/fernanda/Documentos/FIAP/Aula/MicroServicer/trabalho-microservice/project_microservice/projects_venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

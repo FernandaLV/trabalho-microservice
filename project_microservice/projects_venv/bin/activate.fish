@@ -32,7 +32,7 @@ end
 # unset irrelavent variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/fernanda/Documentos/FIAP/Aula/MicroServicer/project_microservice/projects_venv"
+set -gx VIRTUAL_ENV "/home/fernanda/Documentos/FIAP/Aula/MicroServicer/trabalho-microservice/project_microservice/projects_venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
