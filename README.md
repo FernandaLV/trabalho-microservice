@@ -19,3 +19,8 @@ $ pip3 install connexion
 $ pip3 install connexion[swagger-ui]
 
 $ python3 server.py
+
+
+Criar Docker Sprint
+$ docker build -t imagem_sprints_microservice .
+$ docker run --name sprints-microservice -it -p 5000:5000 -d imagem_sprints_microservice
