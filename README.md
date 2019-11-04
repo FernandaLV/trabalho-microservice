@@ -3,7 +3,8 @@ Aula MBA FIAP - Turma 34SCJ - Trabalho Final Microservice
 
 
 Para rodar o container Microserviço de Projetos:
-docker run --name projects-microservice -it -p 5050:5000 -d fernandalv/projects_microservice
+
+$ docker run --name projects-microservice -it -p 5050:5000 -d fernandalv/projects_microservice
 
 Para rodar Microserviço de Sprint no python:
 source sprints_venv/bin/activate
