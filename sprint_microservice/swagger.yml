@@ -1,0 +1,135 @@
+swagger: "2.0"
+info:
+  description: Swagger file
+  version: "1.0.0"
+  title: Swagger ReST Sprints
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+paths:
+  /sprints:
+    get:
+      operationId: sprints.read_all
+      tags:
+        - Sprints
+      summary: Lista de sprints
+      description: Lista de sprints
+      responses:
+        200:
+          description: Sucesso na leitura dos sprints
+          schema:
+            type: array
+            items:
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                projectId:
+                  type: string
+                timestamp_start:
+                  type: string
+                timestamp_end:
+                  type: string
+    post:
+      operationId: sprints.create
+      tags:
+        - Sprints
+      summary: Cria um sprint e adiciona na lista de Sprints
+      description: Adiciona na lista de Sprints
+      parameters:
+        - name: sprint
+          in: body
+          description: Sprint a ser criado
+          required: True
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                description: Nome do sprint, deve ser único
+              description:
+                type: string
+                description: Descrição do sprint
+              projectId:
+                type: string
+                description: Nome do projeto do qual o sprint pertence
+      responses:
+        201:
+          description: Sucesso ao criar
+
+  /sprints/{name}:
+    get:
+      operationId: sprints.read_one
+      tags:
+        - Sprints
+      summary: Leitura de um sprint da lista de Sprints
+      description: Leitura de um sprint
+      parameters:
+        - name: name
+          in: path
+          description: Nome do sprint
+          type: string
+          required: True
+      responses:
+        200:
+          description: Sucesso na leitura de um sprint
+          schema:
+            properties:
+              name:
+                type: string
+              description:
+                type: string
+              timestamp:
+                type: string
+              projectId:
+                type: string
+              timestamp_start:
+                type: string
+              timestamp_end:
+                type: string
+
+    
+    put:
+      operationId: sprints.update
+      tags:
+        - Sprints
+      summary: Update na lista de Sprints
+      description: Update na lista
+      parameters:
+        - name: name
+          in: path
+          description: Nome do sprint
+          type: string
+          required: True
+        - name: sprint
+          in: body
+          schema:
+            type: object
+            properties:
+              description:
+                type: string
+              timestamp_end:
+                type: string
+      responses:
+        200:
+          description: Sucesso ao atualizar
+
+    delete:
+      operationId: sprints.delete
+      tags:
+        - Sprints
+      summary: Deletar um sprint na lista de Sprints
+      description: Deleta um sprint
+      parameters:
+        - name: name
+          in: path
+          type: string
+          required: True
+      responses:
+        200:
+          description: Sucesso ao deletar
