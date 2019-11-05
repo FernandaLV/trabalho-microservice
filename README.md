@@ -41,5 +41,6 @@ $ docker run --name sprints-microservice -it -p 5000:5000 -d fernandalv/sprints_
 
 
 OBS: Se não conectar Sprints com Projects:
-Verificar o IpAddress de Projects e corrigir no sprints.py
+ Verificar o IpAddress de Projects e corrigir no sprints.py
+
 OBS2: Solução momentania por não possuir link entre os containers
