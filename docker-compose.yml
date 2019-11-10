@@ -1,21 +1,13 @@
 version: "3.7"
 services:
   projects-microservice:
-    build: ./project_microservice  # path is relative to docker-compose.yml localtion
-    image: project_microservice
+    image: fernandalv/projects_microservice
     ports:
       - 5000:5000  # host:container
-    expose:
-      - "5000"
   sprints-microservice:
-    build: ./sprint_microservice  # path is relative to docker-compose.yml localtion
-    image: sprint_microservice
+    image: fernandalv/sprints_microservice
     depends_on: projects-microservice
     ports:
-      - 5001:5000  # host:container
-    expose:
-      - "5001"
-      - "5000"
+      - 5050:5000  # host:container
     depends_on:
-      - projects-microservice  # website is not going to work 
-                             # unless observatory-service is running
+      - projects-microservice
