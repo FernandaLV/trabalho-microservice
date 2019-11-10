@@ -17,7 +17,8 @@ SPRINTS = {
 }
 
 def get_project_info(projectId):
-    api_url_base = 'project_microservice://projects-microservice:5000/api/projects'
+    api_url_base = 'fernandalv/projects_microservice://projects-microservice:5000/api/projects'
+    #api_url_base = 'http://172.21.0.2:5000/api/projects'
     headers = {'Content-Type': 'application/json'}
 
     api_url = '{0}/{1}'.format(api_url_base, projectId)
